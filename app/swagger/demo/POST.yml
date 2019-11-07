@@ -1,0 +1,30 @@
+---
+tags:
+  - Demo application
+parameters:
+  - name: Demo
+    in: body
+    schema:
+      type: object
+      required:
+        - demo1
+      properties:
+        demo1:
+          type: string
+        demo2:
+          type: integer
+          default:
+        demo3:
+          type: boolean
+          default: false
+
+    description: <b>demo1</b> - some description <br/>
+      <b>demo2</b> - some description <br/>
+      <b>demo3</b> - some description <br/>
+
+
+responses:
+  200:
+    description: the video was successfully processed
+    
+          

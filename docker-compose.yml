@@ -1,0 +1,30 @@
+version: "2"
+
+services:
+  server:
+    env_file:
+      - .env
+    image: tiangolo/uwsgi-nginx-flask:python3.6
+    working_dir: /mnt
+    volumes:
+      - .:/mnt
+    ports:
+      - 3000:3000
+    stdin_open: true
+    tty: true
+    # main.py for http server 
+    # tas.py for queue  
+    command: python app/main.py
+    # command: python app/task.py
+
+  testserver:
+    env_file: .env
+    image: tiangolo/uwsgi-nginx-flask:python3.6
+    working_dir: /mnt
+    volumes:
+      - .:/mnt
+    ports:
+      - 5053:5053
+    environment:
+      APPLICATION_PORT: 5053
+    command: python -m pytest test/
