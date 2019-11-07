@@ -6,7 +6,7 @@ itsdangerous==0.24
 pytz==2015.7
 requests==2.20.1
 six==1.11.0
-Werkzeug==0.14.1
+Werkzeug==0.15.3
 python-dotenv
 # tensorflow==1.13.1
 # Keras==2.0.0
